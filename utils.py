@@ -172,10 +172,13 @@ class WorkerApi:
                      f'\nСформирован URL: {url}\n'
                      )
         response = self.__get_api_answer(url)
+        if response.status_code not in [HTTPStatus.OK, HTTPStatus.NOT_FOUND]:
+            raise UnexpectedAnswer('Неожиданный ответ')
         status = response.status_code == HTTPStatus.OK
         response = response.json()
         response['is_exist'] = status
         return response
+
 
     def get_type_education(self):
         """Функция для формирования url и
