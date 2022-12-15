@@ -12,6 +12,9 @@
 
 Управление данным ботов и API [CampBotControl](https://github.com/nuclear0077/CampBotControl)
 
+## Technology
+Python 3.9, API, Aiogram, Httpx
+
 ## Documentation
 
 ### Как запустить проект:
